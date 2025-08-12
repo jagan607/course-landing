@@ -23,8 +23,7 @@
       --ring: 0 0 0 4px rgba(34,211,238,.25);
       --radius: 14px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.18), transparent 40%),
-              radial-gradient(1200px 800px at 100% 0%, rgba(109,40,217,.18), transparent 40%);
+      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.18), transparent 40%), radial-gradient(1200px 800px at 100% 0%, rgba(109,40,217,.18), transparent 40%);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -99,30 +98,32 @@
           <span class="pill">No budget · No audience · Free tools</span>
           <h1 class="title">Turn Your Ideas into Income with an AI-Powered Micro-Course</h1>
           <p class="lead">
-            Learn the exact **90-day** system to create, launch, and sell a micro-course using AI and free tools.
+            Learn the exact <strong>90-day</strong> system to create, launch, and sell a micro-course using AI and free tools.
             Start with the <strong>Digital Product Launch Cheat Sheet</strong>.
           </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
-            <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
-            <a class="btn secondary" href="#how">How it works</a>
-          </div>
-          <p class="badge" style="margin-top:12px">By Jagan • Built with free tools • Set up once, runs mostly on autopilot</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+              <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
+              <a class="btn secondary" href="#how">How it works</a>
+            </div>
+            <p class="badge" style="margin-top:12px">By Jagan • Built with free tools • Set up once, runs mostly on autopilot</p>
         </div>
 
         <!-- Opt-in Card -->
         <aside class="card" id="optin" aria-label="Free cheat sheet signup">
-          <form class="form" action="FORM_ACTION_HERE" method="post">
+          <!-- Updated MailerLite form -->
+          <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="_blank">
             <h3 style="margin:0 0 8px">Get the Cheat Sheet</h3>
             <p class="muted" style="margin:0 0 14px">7 steps to plan, build and sell your first digital product.</p>
 
             <label class="label" for="name">Name</label>
-            <input class="input" id="name" name="name" type="text" placeholder="Your name" required/>
+            <input class="input" id="name" name="fields[name]" type="text" placeholder="Your name" required />
 
             <label class="label" for="email" style="margin-top:10px">Email</label>
-            <input class="input" id="email" name="email" type="email" placeholder="you@example.com" required/>
+            <input class="input" id="email" name="fields[email]" type="email" placeholder="you@example.com" required />
 
-            <!-- If your ESP needs hidden fields, add them here -->
-            <!-- <input type="hidden" name="ml-submit" value="1" /> -->
+            <!-- Hidden inputs required by MailerLite -->
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
 
             <button class="btn" type="submit" style="width:100%;margin-top:14px">
               Send me the cheat sheet
@@ -234,13 +235,17 @@
 
     <!-- Footer opt-in -->
     <section class="section card" style="padding:18px" aria-label="Footer signup">
-      <form class="form" action="FORM_ACTION_HERE" method="post">
+      <!-- Updated MailerLite form in footer -->
+      <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="_blank">
         <h3 style="margin:0 0 8px">Send me the cheat sheet</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:10px">
-          <input class="input" name="name" type="text" placeholder="Name" required />
-          <input class="input" name="email" type="email" placeholder="Email" required />
+          <input class="input" name="fields[name]" type="text" placeholder="Name" required />
+          <input class="input" name="fields[email]" type="email" placeholder="Email" required />
           <button class="btn" type="submit">Get it</button>
         </div>
+        <!-- Hidden inputs required by MailerLite -->
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
         <p class="badge" style="margin-top:8px">You’ll also get the 6-email mini-course. Unsubscribe anytime.</p>
       </form>
     </section>
@@ -253,12 +258,12 @@
   <script>
     // Year stamp
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Optional: prevent empty submissions when FORM_ACTION_HERE isn't set yet
+    // Optional: prevent empty submissions when the MailerLite action isn't set (sanity check)
     for (const f of document.querySelectorAll('form')){
       f.addEventListener('submit', e => {
         if (f.action.includes('FORM_ACTION_HERE')) {
           e.preventDefault();
-          alert('Connect your email provider first: replace FORM_ACTION_HERE with your MailerLite/Beehiiv/ConvertKit form action URL.');
+          alert('Connect your email provider first: replace FORM_ACTION_HERE with your MailerLite form action URL.');
         }
       });
     }
