@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Powered Micro-Course — Turn Ideas into Income</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Create, market, and sell a digital micro-course using free tools and AI. Grab the free cheat sheet and get the exact steps." />
+  <meta property="og:title" content="AI-Powered Micro-Course — Turn Ideas into Income" />
+  <meta property="og:description" content="Create, market, and sell a digital micro-course using free tools and AI." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --card: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --brand: #6d28d9;
+      --brand-2:#22d3ee;
+      --ring: 0 0 0 4px rgba(34,211,238,.25);
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.18), transparent 40%),
+              radial-gradient(1200px 800px at 100% 0%, rgba(109,40,217,.18), transparent 40%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 6px 20px rgba(34,211,238,.35)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;font-weight:700;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease, filter .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{background:#1f2937;color:#e5e7eb;border-color:#273244}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;color:var(--muted);background:#0f172a}
+    .hero{
+      position:relative;overflow:hidden;border-radius:22px;background:var(--grad), linear-gradient(180deg,#0b1220 0%, #0b0f19 100%);
+      padding:56px 24px;margin-top:12px;border:1px solid rgba(255,255,255,.07)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    .title{font-size:clamp(28px,4vw,46px);line-height:1.15;margin:10px 0 12px}
+    .lead{color:#cbd5e1;font-size:clamp(16px,2.2vw,18px)}
+    .card{background:linear-gradient(180deg,#0d1423 0%, #0c101b 100%);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .form{padding:18px}
+    .label{font-size:14px;color:var(--muted);margin-bottom:6px;display:block}
+    .input{width:100%;padding:14px 14px;border-radius:12px;border:1px solid #2a364a;background:#0c1324;color:#e5e7eb;outline:none}
+    .input:focus{box-shadow:var(--ring);border-color:#22d3ee}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    .feature{padding:20px}
+    .feature h3{margin:0 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+    .section{margin:48px 0}
+    .section h2{font-size:28px;margin:0 0 14px}
+    .list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .check{width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#10b981,#22d3ee)}
+    .faq{display:grid;gap:12px}
+    details{background:#0c101b;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px}
+    summary{cursor:pointer;font-weight:600}
+    footer{color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,.07);padding:20px 0;margin-top:40px}
+    .badge{font-size:12px;color:#9ca3af}
+    .sep{opacity:.14;margin:0 6px}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Nav -->
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>AI Micro-Course</span>
+      </div>
+      <div>
+        <a class="btn secondary" href="#curriculum">Curriculum</a>
+        <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="pill">No budget · No audience · Free tools</span>
+          <h1 class="title">Turn Your Ideas into Income with an AI-Powered Micro-Course</h1>
+          <p class="lead">
+            Learn the exact **90-day** system to create, launch, and sell a micro-course using AI and free tools.
+            Start with the <strong>Digital Product Launch Cheat Sheet</strong>.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+            <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
+            <a class="btn secondary" href="#how">How it works</a>
+          </div>
+          <p class="badge" style="margin-top:12px">By Jagan • Built with free tools • Set up once, runs mostly on autopilot</p>
+        </div>
+
+        <!-- Opt-in Card -->
+        <aside class="card" id="optin" aria-label="Free cheat sheet signup">
+          <form class="form" action="FORM_ACTION_HERE" method="post">
+            <h3 style="margin:0 0 8px">Get the Cheat Sheet</h3>
+            <p class="muted" style="margin:0 0 14px">7 steps to plan, build and sell your first digital product.</p>
+
+            <label class="label" for="name">Name</label>
+            <input class="input" id="name" name="name" type="text" placeholder="Your name" required/>
+
+            <label class="label" for="email" style="margin-top:10px">Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="you@example.com" required/>
+
+            <!-- If your ESP needs hidden fields, add them here -->
+            <!-- <input type="hidden" name="ml-submit" value="1" /> -->
+
+            <button class="btn" type="submit" style="width:100%;margin-top:14px">
+              Send me the cheat sheet
+            </button>
+            <p class="badge" style="margin-top:8px">No spam. Unsubscribe anytime.</p>
+          </form>
+        </aside>
+      </div>
+    </header>
+
+    <!-- Trust / fast hits -->
+    <section class="section">
+      <div class="grid-3">
+        <div class="card feature">
+          <h3>Build fast with AI</h3>
+          <p class="muted">Use ChatGPT for outlines, Canva/CapCut for assets and edits. Create a course in days, not months.</p>
+        </div>
+        <div class="card feature">
+          <h3>Sell on autopilot</h3>
+          <p class="muted">Automated welcome, nurture and offer emails do the heavy lifting while you focus on content.</p>
+        </div>
+        <div class="card feature">
+          <h3>Zero inventory</h3>
+          <p class="muted">Purely digital. Unlimited copies. No shipping, warehousing or logistics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <h2>How it works</h2>
+      <ol class="list">
+        <li><span class="check" aria-hidden="true"></span> Pick an evergreen niche with clear demand.</li>
+        <li><span class="check" aria-hidden="true"></span> Draft lessons with AI, design minimal slides, record short videos.</li>
+        <li><span class="check" aria-hidden="true"></span> Set up the landing page and email automation.</li>
+        <li><span class="check" aria-hidden="true"></span> Post daily short-form tips that drive traffic to the cheat sheet.</li>
+        <li><span class="check" aria-hidden="true"></span> Launch the paid micro-course plus a simple upsell.</li>
+      </ol>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="section" id="curriculum">
+      <h2>What you’ll learn inside the micro-course</h2>
+      <div class="grid-3">
+        <div class="card feature">
+          <h3>Module 1</h3>
+          <p class="muted">Digital product basics and examples that actually sell.</p>
+        </div>
+        <div class="card feature">
+          <h3>Module 2</h3>
+          <p class="muted">Niche research with free tools and sanity-checks.</p>
+        </div>
+        <div class="card feature">
+          <h3>Module 3</h3>
+          <p class="muted">AI-assisted content creation and asset design.</p>
+        </div>
+        <div class="card feature">
+          <h3>Module 4</h3>
+          <p class="muted">Recording and packaging your micro-lessons.</p>
+        </div>
+        <div class="card feature">
+          <h3>Module 5</h3>
+          <p class="muted">Landing page + email automation setup.</p>
+        </div>
+        <div class="card feature">
+          <h3>Module 6</h3>
+          <p class="muted">Content engine for growth + simple paid ads.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / social proof placeholder -->
+    <section class="section">
+      <h2>What creators say</h2>
+      <div class="grid-3">
+        <figure class="card feature">
+          <p>“The checklist alone helped me launch my first paid download in a week.”</p>
+          <figcaption class="muted">— Priya, designer</figcaption>
+        </figure>
+        <figure class="card feature">
+          <p>“Clear, practical, no fluff. The nurture emails did the selling for me.”</p>
+          <figcaption class="muted">— Arjun, indie dev</figcaption>
+        </figure>
+        <figure class="card feature">
+          <p>“Went from idea to first $1k in 14 days using the exact steps.”</p>
+          <figcaption class="muted">— Sana, marketer</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Do I need an audience or budget?</summary>
+          <p class="muted">No. The system relies on free tools and organic traffic first. Paid ads are optional later.</p>
+        </details>
+        <details>
+          <summary>How long is the micro-course?</summary>
+          <p class="muted">About 45–60 minutes across 6–7 short lessons. Designed for momentum, not overwhelm.</p>
+        </details>
+        <details>
+          <summary>Will this work outside the U.S.?</summary>
+          <p class="muted">Yes. Everything is platform-agnostic and uses globally available tools.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Footer opt-in -->
+    <section class="section card" style="padding:18px" aria-label="Footer signup">
+      <form class="form" action="FORM_ACTION_HERE" method="post">
+        <h3 style="margin:0 0 8px">Send me the cheat sheet</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:10px">
+          <input class="input" name="name" type="text" placeholder="Name" required />
+          <input class="input" name="email" type="email" placeholder="Email" required />
+          <button class="btn" type="submit">Get it</button>
+        </div>
+        <p class="badge" style="margin-top:8px">You’ll also get the 6-email mini-course. Unsubscribe anytime.</p>
+      </form>
+    </section>
+
+    <footer class="container" style="padding-left:0;padding-right:0">
+      <div>© <span id="y"></span> Jagan<span class="sep">•</span><a href="#optin">Privacy</a><span class="sep">•</span><a href="#optin">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Optional: prevent empty submissions when FORM_ACTION_HERE isn't set yet
+    for (const f of document.querySelectorAll('form')){
+      f.addEventListener('submit', e => {
+        if (f.action.includes('FORM_ACTION_HERE')) {
+          e.preventDefault();
+          alert('Connect your email provider first: replace FORM_ACTION_HERE with your MailerLite/Beehiiv/ConvertKit form action URL.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
