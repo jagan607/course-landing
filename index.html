@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,8 @@
       --ring: 0 0 0 4px rgba(34,211,238,.25);
       --radius: 14px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.18), transparent 40%), radial-gradient(1200px 800px at 100% 0%, rgba(109,40,217,.18), transparent 40%);
+      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.18), transparent 40%),
+              radial-gradient(1200px 800px at 100% 0%, rgba(109,40,217,.18), transparent 40%);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -101,17 +103,17 @@
             Learn the exact <strong>90-day</strong> system to create, launch, and sell a micro-course using AI and free tools.
             Start with the <strong>Digital Product Launch Cheat Sheet</strong>.
           </p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
-              <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
-              <a class="btn secondary" href="#how">How it works</a>
-            </div>
-            <p class="badge" style="margin-top:12px">By Jagan • Built with free tools • Set up once, runs mostly on autopilot</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+            <a class="btn" href="#optin">Get the Free Cheat Sheet</a>
+            <a class="btn secondary" href="#how">How it works</a>
+          </div>
+          <p class="badge" style="margin-top:12px">By Jagan • Built with free tools • Set up once, runs mostly on autopilot</p>
         </div>
 
         <!-- Opt-in Card -->
         <aside class="card" id="optin" aria-label="Free cheat sheet signup">
           <!-- Updated MailerLite form -->
-          <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="_blank">
+          <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="hidden_iframe" onsubmit="document.getElementById('cheat-sheet-success').style.display='block';">
             <h3 style="margin:0 0 8px">Get the Cheat Sheet</h3>
             <p class="muted" style="margin:0 0 14px">7 steps to plan, build and sell your first digital product.</p>
 
@@ -129,6 +131,8 @@
               Send me the cheat sheet
             </button>
             <p class="badge" style="margin-top:8px">No spam. Unsubscribe anytime.</p>
+            <!-- Inline success message hidden until form submission -->
+            <p id="cheat-sheet-success" class="badge" style="display:none;margin-top:8px">Thank you! Check your inbox for the cheat sheet.</p>
           </form>
         </aside>
       </div>
@@ -236,7 +240,7 @@
     <!-- Footer opt-in -->
     <section class="section card" style="padding:18px" aria-label="Footer signup">
       <!-- Updated MailerLite form in footer -->
-      <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="_blank">
+      <form class="form" action="https://assets.mailerlite.com/jsonp/1730103/forms/162516049212736603/subscribe" method="post" target="hidden_iframe" onsubmit="document.getElementById('cheat-sheet-success-footer').style.display='block';">
         <h3 style="margin:0 0 8px">Send me the cheat sheet</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:10px">
           <input class="input" name="fields[name]" type="text" placeholder="Name" required />
@@ -247,12 +251,16 @@
         <input type="hidden" name="ml-submit" value="1" />
         <input type="hidden" name="anticsrf" value="true" />
         <p class="badge" style="margin-top:8px">You’ll also get the 6-email mini-course. Unsubscribe anytime.</p>
+        <!-- Inline success message for the footer form hidden until submission -->
+        <p id="cheat-sheet-success-footer" class="badge" style="display:none;margin-top:8px">Thank you! Check your inbox for the cheat sheet.</p>
       </form>
     </section>
 
     <footer class="container" style="padding-left:0;padding-right:0">
       <div>© <span id="y"></span> Jagan<span class="sep">•</span><a href="#optin">Privacy</a><span class="sep">•</span><a href="#optin">Terms</a></div>
     </footer>
+  <!-- Hidden iframe used to submit MailerLite forms invisibly -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
   </div>
 
   <script>
